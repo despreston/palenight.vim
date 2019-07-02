@@ -92,11 +92,11 @@ let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
 let s:special_grey = s:colors.special_grey
 let s:vertsplit = s:colors.vertsplit
+let s:dark_blue = s:colors.dark_blue
 
 " }}}
 
 " Syntax Groups (descriptions and ordering from `:h w18`) {{{
-
 call s:h("Comment", { "fg": s:comment_grey, "gui": "italic", "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:cyan }) " any constant
 call s:h("String", { "fg": s:green }) " a string constant: "this is a string"
@@ -160,7 +160,7 @@ call s:h("MatchParen", { "fg": s:blue, "gui": "underline" }) " The character und
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
+call s:h("Normal", { "fg": s:dark_blue }) " normal text
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
@@ -235,7 +235,7 @@ call s:h("htmlTagName", { "fg": s:red })
 call s:h("coffeeExtendedOp", { "fg": s:purple })
 
 " JavaScript
-call s:h("javaScriptBraces", { "fg": s:white })
+call s:h("javaScriptBraces", { "fg": s:cyan })
 call s:h("javaScriptFunction", { "fg": s:purple })
 call s:h("javaScriptIdentifier", { "fg": s:purple })
 call s:h("javaScriptNull", { "fg": s:dark_yellow })
@@ -255,12 +255,11 @@ call s:h("jsExport", { "fg": s:purple })
 call s:h("jsExportDefault", { "fg": s:red })
 call s:h("jsExtendsKeyword", { "fg": s:purple })
 call s:h("jsConditional", { "fg": s:purple })
-call s:h("jsOperator", { "fg": s:purple })
 call s:h("jsFrom", { "fg": s:purple })
-call s:h("jsFuncArgs", { "fg": s:blue })
+call s:h("jsFuncArgs", { "fg": s:dark_yellow })
 call s:h("jsFuncCall", { "fg": s:blue })
 call s:h("jsFuncName", { "fg": s:blue })
-call s:h("jsObjectProp", { "fg": s:cyan })
+call s:h("jsObjectProp", { "fg": s:dark_blue })
 call s:h("jsFunction", { "fg": s:purple })
 call s:h("jsGenerator", { "fg": s:yellow })
 call s:h("jsGlobalObjects", { "fg": s:yellow })
@@ -272,10 +271,22 @@ call s:h("jsModules", { "fg": s:purple })
 call s:h("jsNull", { "fg": s:dark_yellow })
 call s:h("jsStorageClass", { "fg": s:purple })
 call s:h("jsSuper", { "fg": s:red })
-call s:h("jsTemplateBraces", { "fg": s:dark_red })
+call s:h("jsTemplateBraces", { "fg": s:cyan })
 call s:h("jsTemplateVar", { "fg": s:green })
-call s:h("jsThis", { "fg": s:red })
+call s:h("jsThis", { "fg": s:light_red, "gui": "italic", "cterm": "italic" })
 call s:h("jsUndefined", { "fg": s:dark_yellow })
+call s:h("jsAsyncKeyword", { "fg": s:purple })
+call s:h("jsFuncBraces", { "fg": s:cyan })
+call s:h("jsObjectColon", { "fg": s:cyan })
+call s:h("jsObjectBraces", { "fg": s:cyan })
+call s:h("jsParens", { "fg": s:cyan })
+call s:h("jsBrackets", { "fg": s:cyan })
+call s:h("jsOperator", { "fg": s:cyan })
+call s:h("jsFuncParens", { "fg": s:cyan })
+call s:h("jsBooleanTrue", { "fg": s:dark_yellow })
+call s:h("jsBooleanFalse", { "fg": s:dark_yellow })
+call s:h("jsForAwait", { "fg": s:purple })
+
 " call s:h("jsVariableDef", { "fg": s:blue })
 " https://github.com/othree/yajs.vim
 call s:h("javascriptArrowFunc", { "fg": s:purple })
